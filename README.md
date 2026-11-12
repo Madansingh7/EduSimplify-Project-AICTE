@@ -62,6 +62,10 @@ The agent leverages IBM's enterprise foundation model, **`ibm/granite-4-h-small`
 
 The EduSimplify architecture follows a decoupled client-server model integrating securely with IBM Cloud services:
 
+![EduSimplify Architecture](docs/architecture_diagram.svg)
+
+![EduSimplify Architecture Detailed](docs/architecture%20diagram.png)
+
 ### Data Flow Pipeline:
 1. **User Interaction**: The student inputs an academic topic or textbook excerpt in the browser and selects a proficiency level (**Beginner**, **Intermediate**, or **Expert**).
 2. **Request Validation**: The Flask application receives the POST payload at `/simplify`, validating payload structure, string lengths, and level parameters.
