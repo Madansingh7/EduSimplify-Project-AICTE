@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduSimplify – AI-Powered Course Content Simplification</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- ───────────────── Header ───────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">⚡ EduSimplify</h1>
+      <p class="tagline">AI-Powered Course Content Simplification &nbsp;·&nbsp; Powered by <strong>IBM Granite</strong> on <strong>watsonx.ai</strong></p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ───────────────── Input Card ───────────────── -->
+    <section class="card input-card">
+      <h2>Simplify Academic Content</h2>
+      <p class="helper-text">Enter any academic topic or paste a passage. Choose your level and click <strong>Simplify</strong>.</p>
+
+      <form id="simplify-form" novalidate>
+
+        <div class="form-group">
+          <label for="topic">Topic / Content</label>
+          <textarea
+            id="topic"
+            name="topic"
+            rows="5"
+            maxlength="2000"
+            placeholder="e.g. Explain photosynthesis, or paste a paragraph from your textbook..."
+            required
+          ></textarea>
+          <span class="char-count" id="char-count">0 / 2000</span>
+        </div>
+
+        <div class="form-group">
+          <label>Learning Level</label>
+          <div class="level-buttons" role="group" aria-label="Select learning level">
+            <button type="button" class="level-btn active" data-level="beginner">🌱 Beginner</button>
+            <button type="button" class="level-btn" data-level="intermediate">📘 Intermediate</button>
+            <button type="button" class="level-btn" data-level="expert">🎓 Expert</button>
+          </div>
+          <input type="hidden" id="level" name="level" value="beginner" />
+        </div>
+
+        <div id="form-error" class="form-error" role="alert" aria-live="polite" hidden></div>
+
+        <button type="submit" class="btn-primary" id="submit-btn">
+          <span class="btn-text">✨ Simplify</span>
+          <span class="btn-loading" hidden>
+            <span class="spinner" aria-hidden="true"></span> Generating…
+          </span>
+        </button>
+
+      </form>
+    </section>
+
+    <!-- ───────────────── Results ───────────────── -->
+    <section id="results" class="results-section" hidden>
+
+      <div class="results-header">
+        <h2>Your Simplified Content</h2>
+        <button class="btn-secondary" id="new-search-btn">← New Search</button>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="card result-card full-width" id="section-simplified-explanation">
+          <h3><span class="icon">💡</span> Simplified Explanation</h3>
+          <div class="section-content"></div>
+        </div>
+
+        <div class="card result-card" id="section-key-concepts">
+          <h3><span class="icon">🔑</span> Key Concepts</h3>
+          <div class="section-content"></div>
+        </div>
+
+        <div class="card result-card" id="section-real-world-analogy">
+          <h3><span class="icon">🌍</span> Real-world Analogy</h3>
+          <div class="section-content"></div>
+        </div>
+
+        <div class="card result-card" id="section-example">
+          <h3><span class="icon">📝</span> Example</h3>
+          <div class="section-content"></div>
+        </div>
+
+        <div class="card result-card" id="section-important-terms">
+          <h3><span class="icon">📖</span> Important Terms</h3>
+          <div class="section-content"></div>
+        </div>
+
+        <div class="card result-card" id="section-quick-revision">
+          <h3><span class="icon">⚡</span> Quick Revision</h3>
+          <div class="section-content"></div>
+        </div>
+
+        <div class="card result-card full-width" id="section-quiz-questions">
+          <h3><span class="icon">🧠</span> Quiz Questions</h3>
+          <div class="section-content"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────────── API Error Banner ───────────────── -->
+    <div id="api-error" class="api-error" role="alert" aria-live="polite" hidden>
+      <strong>Error:</strong> <span id="api-error-message"></span>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built by <strong>Madan Singh</strong> &nbsp;·&nbsp; AICTE × IBM Student Project &nbsp;·&nbsp; Powered by <strong>IBM Granite</strong> on <strong>watsonx.ai</strong></p>
+    </div>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Segoe UI, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="#f0f4fa"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1280" height="64" fill="#0530ad"/>
+  <text x="640" y="22" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600" letter-spacing="2">AICTE × IBM STUDENT PROJECT</text>
+  <text x="640" y="48" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">EduSimplify – AI-Powered Course Content Simplification Agent</text>
+
+  <!-- ── COLUMN LAYOUT: Left rail | Centre spine | Right rail ── -->
+
+  <!-- ═══════════════ LEFT COLUMN — Input ═══════════════ -->
+
+  <!-- USER -->
+  <rect x="60" y="100" width="200" height="70" rx="10" fill="#ffffff" stroke="#0530ad" stroke-width="2"/>
+  <text x="160" y="128" text-anchor="middle" fill="#0530ad" font-size="11" font-weight="700">👤  USER</text>
+  <text x="160" y="148" text-anchor="middle" fill="#444" font-size="10">Enters academic topic</text>
+  <text x="160" y="163" text-anchor="middle" fill="#444" font-size="10">or content</text>
+
+  <!-- Down arrow USER → Level -->
+  <line x1="160" y1="170" x2="160" y2="208" stroke="#0530ad" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Learning Level selector -->
+  <rect x="60" y="208" width="200" height="80" rx="10" fill="#e8f0fe" stroke="#0530ad" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="160" y="228" text-anchor="middle" fill="#0530ad" font-size="10" font-weight="700">LEARNING LEVEL</text>
+  <rect x="72"  y="238" width="52" height="24" rx="6" fill="#0530ad"/>
+  <text x="98"  y="255" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Beginner</text>
+  <rect x="134" y="238" width="66" height="24" rx="6" fill="#6ea6ff"/>
+  <text x="167" y="255" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Intermediate</text>
+  <rect x="210" y="238" width="42" height="24" rx="6" fill="#003087"/>
+  <text x="231" y="255" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Expert</text>
+
+  <!-- Down arrow Level → Web Interface -->
+  <line x1="160" y1="288" x2="160" y2="326" stroke="#0530ad" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- WEB INTERFACE -->
+  <rect x="60" y="326" width="200" height="80" rx="10" fill="#ffffff" stroke="#0530ad" stroke-width="2"/>
+  <text x="160" y="349" text-anchor="middle" fill="#0530ad" font-size="11" font-weight="700">WEB INTERFACE</text>
+  <text x="160" y="367" text-anchor="middle" fill="#444" font-size="10">HTML · CSS · JavaScript</text>
+  <text x="160" y="382" text-anchor="middle" fill="#444" font-size="10">Single-page application</text>
+  <text x="160" y="397" text-anchor="middle" fill="#888" font-size="9">localhost:5000</text>
+
+  <!-- Right arrow Web Interface → Flask (horizontal to centre) -->
+  <line x1="260" y1="366" x2="368" y2="366" stroke="#0530ad" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="314" y="358" text-anchor="middle" fill="#0530ad" font-size="9">POST /simplify</text>
+  <text x="314" y="377" text-anchor="middle" fill="#0530ad" font-size="9">JSON</text>
+
+  <!-- ═══════════════ CENTRE SPINE — Backend ═══════════════ -->
+
+  <!-- FLASK BACKEND -->
+  <rect x="368" y="326" width="210" height="80" rx="10" fill="#ffffff" stroke="#0530ad" stroke-width="2.5"/>
+  <text x="473" y="349" text-anchor="middle" fill="#0530ad" font-size="11" font-weight="700">FLASK BACKEND</text>
+  <text x="473" y="367" text-anchor="middle" fill="#444" font-size="10">Python · Input validation</text>
+  <text x="473" y="382" text-anchor="middle" fill="#444" font-size="10">Route: POST /simplify</text>
+  <text x="473" y="397" text-anchor="middle" fill="#888" font-size="9">app.py</text>
+
+  <!-- Down arrow Flask → Prompt Builder -->
+  <line x1="473" y1="406" x2="473" y2="448" stroke="#0530ad" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- PROMPT BUILDER -->
+  <rect x="368" y="448" width="210" height="74" rx="10" fill="#ffffff" stroke="#1a6ba0" stroke-width="2"/>
+  <text x="473" y="470" text-anchor="middle" fill="#1a6ba0" font-size="11" font-weight="700">PROMPT BUILDER</text>
+  <text x="473" y="487" text-anchor="middle" fill="#444" font-size="10">Builds structured prompt</text>
+  <text x="473" y="502" text-anchor="middle" fill="#444" font-size="10">injecting topic + level</text>
+  <text x="473" y="516" text-anchor="middle" fill="#888" font-size="9">prompts.py</text>
+
+  <!-- Down arrow Prompt Builder → watsonx IAM -->
+  <line x1="473" y1="522" x2="473" y2="558" stroke="#1a6ba0" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- IBM WATSONX.AI -->
+  <rect x="368" y="558" width="210" height="80" rx="10" fill="#0530ad" stroke="#0530ad" stroke-width="2"/>
+  <text x="473" y="580" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">IBM WATSONX.AI</text>
+  <text x="473" y="597" text-anchor="middle" fill="#cce0ff" font-size="10">us-south.ml.cloud.ibm.com</text>
+  <text x="473" y="613" text-anchor="middle" fill="#cce0ff" font-size="10">IAM token · REST API</text>
+  <text x="473" y="628" text-anchor="middle" fill="#a0c4ff" font-size="9">watsonx_client.py</text>
+
+  <!-- Right arrow watsonx → Granite -->
+  <line x1="578" y1="598" x2="660" y2="598" stroke="#0530ad" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="619" y="590" text-anchor="middle" fill="#0530ad" font-size="9">inference</text>
+  <text x="619" y="609" text-anchor="middle" fill="#0530ad" font-size="9">request</text>
+
+  <!-- ═══════════════ IBM GRANITE block ═══════════════ -->
+  <rect x="660" y="530" width="220" height="136" rx="12" fill="#061a52" stroke="#0530ad" stroke-width="2.5"/>
+  <!-- IBM logo bar -->
+  <rect x="660" y="530" width="220" height="28" rx="12" fill="#0f62fe"/>
+  <rect x="660" y="543" width="220" height="15" fill="#0f62fe"/>
+  <text x="770" y="549" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1">IBM</text>
+  <text x="770" y="574" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">IBM Granite</text>
+  <text x="770" y="593" text-anchor="middle" fill="#a0c4ff" font-size="10">ibm/granite-4-h-small</text>
+  <text x="770" y="611" text-anchor="middle" fill="#7eb3ff" font-size="9">Large Language Model</text>
+  <text x="770" y="628" text-anchor="middle" fill="#7eb3ff" font-size="9">Greedy decoding</text>
+  <text x="770" y="645" text-anchor="middle" fill="#7eb3ff" font-size="9">max_new_tokens: 2000</text>
+  <text x="770" y="660" text-anchor="middle" fill="#5a96f0" font-size="8">WatsonMachineLearning Runtime</text>
+
+  <!-- Right arrow Granite → Output parser -->
+  <line x1="880" y1="598" x2="948" y2="598" stroke="#0530ad" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="914" y="590" text-anchor="middle" fill="#0530ad" font-size="9">generated</text>
+  <text x="914" y="609" text-anchor="middle" fill="#0530ad" font-size="9">text</text>
+
+  <!-- ═══════════════ RIGHT COLUMN — Output ═══════════════ -->
+
+  <!-- SECTION PARSER -->
+  <rect x="948" y="558" width="200" height="80" rx="10" fill="#ffffff" stroke="#1a6ba0" stroke-width="2"/>
+  <text x="1048" y="580" text-anchor="middle" fill="#1a6ba0" font-size="11" font-weight="700">SECTION PARSER</text>
+  <text x="1048" y="597" text-anchor="middle" fill="#444" font-size="10">Regex heading detection</text>
+  <text x="1048" y="612" text-anchor="middle" fill="#444" font-size="10">Extracts 7 sections</text>
+  <text x="1048" y="628" text-anchor="middle" fill="#888" font-size="9">parse_sections() · app.py</text>
+
+  <!-- Up arrow Parser → 7 Sections display -->
+  <line x1="1048" y1="558" x2="1048" y2="490" stroke="#1a6ba0" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- 7 SECTIONS OUTPUT CARD -->
+  <rect x="948" y="100" width="292" height="382" rx="12" fill="#ffffff" stroke="#0530ad" stroke-width="2.5"/>
+  <rect x="948" y="100" width="292" height="36" rx="12" fill="#0530ad"/>
+  <rect x="948" y="118" width="292" height="18" fill="#0530ad"/>
+  <text x="1094" y="124" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">STRUCTURED AI OUTPUT</text>
+
+  <!-- Section rows -->
+  <rect x="962" y="146" width="264" height="28" rx="5" fill="#e8f0fe"/>
+  <text x="978" y="165" fill="#0530ad" font-size="11" font-weight="700">1.</text>
+  <text x="996" y="165" fill="#333" font-size="11" font-weight="600">Simplified Explanation</text>
+
+  <rect x="962" y="180" width="264" height="28" rx="5" fill="#f4f8ff"/>
+  <text x="978" y="199" fill="#0530ad" font-size="11" font-weight="700">2.</text>
+  <text x="996" y="199" fill="#333" font-size="11" font-weight="600">Key Concepts</text>
+
+  <rect x="962" y="214" width="264" height="28" rx="5" fill="#e8f0fe"/>
+  <text x="978" y="233" fill="#0530ad" font-size="11" font-weight="700">3.</text>
+  <text x="996" y="233" fill="#333" font-size="11" font-weight="600">Real-world Analogy</text>
+
+  <rect x="962" y="248" width="264" height="28" rx="5" fill="#f4f8ff"/>
+  <text x="978" y="267" fill="#0530ad" font-size="11" font-weight="700">4.</text>
+  <text x="996" y="267" fill="#333" font-size="11" font-weight="600">Example</text>
+
+  <rect x="962" y="282" width="264" height="28" rx="5" fill="#e8f0fe"/>
+  <text x="978" y="301" fill="#0530ad" font-size="11" font-weight="700">5.</text>
+  <text x="996" y="301" fill="#333" font-size="11" font-weight="600">Important Terms</text>
+
+  <rect x="962" y="316" width="264" height="28" rx="5" fill="#f4f8ff"/>
+  <text x="978" y="335" fill="#0530ad" font-size="11" font-weight="700">6.</text>
+  <text x="996" y="335" fill="#333" font-size="11" font-weight="600">Quick Revision</text>
+
+  <rect x="962" y="350" width="264" height="28" rx="5" fill="#e8f0fe"/>
+  <text x="978" y="369" fill="#0530ad" font-size="11" font-weight="700">7.</text>
+  <text x="996" y="369" fill="#333" font-size="11" font-weight="600">Quiz Questions (3 MCQs)</text>
+
+  <!-- Rendered to user label -->
+  <rect x="962" y="394" width="264" height="76" rx="8" fill="#f0f7ff" stroke="#6ea6ff" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="1094" y="416" text-anchor="middle" fill="#0530ad" font-size="10" font-weight="700">↩ Rendered to User</text>
+  <text x="1094" y="434" text-anchor="middle" fill="#555" font-size="9">7 cards displayed on the web UI</text>
+  <text x="1094" y="450" text-anchor="middle" fill="#555" font-size="9">level-appropriate content</text>
+  <text x="1094" y="466" text-anchor="middle" fill="#888" font-size="9">JSON → fetch API → DOM</text>
+
+  <!-- Left arrow from Output card back to Web Interface (return path) -->
+  <line x1="948" y1="366" x2="310" y2="366" stroke="#1a6ba0" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arr3)"/>
+  <text x="629" y="356" text-anchor="middle" fill="#1a6ba0" font-size="9">JSON response { sections: { … } }</text>
+
+  <!-- ── FLOW LABEL ROW ── -->
+  <!-- subtle step numbers along the bottom -->
+  <text x="160"  y="700" text-anchor="middle" fill="#888" font-size="9">① Input</text>
+  <text x="473"  y="700" text-anchor="middle" fill="#888" font-size="9">② Process</text>
+  <text x="770"  y="700" text-anchor="middle" fill="#888" font-size="9">③ Inference</text>
+  <text x="1094" y="700" text-anchor="middle" fill="#888" font-size="9">④ Output</text>
+
+  <!-- IBM/AICTE badge bottom-right -->
+  <text x="1255" y="712" text-anchor="end" fill="#aaa" font-size="8">AICTE × IBM Student Project · EduSimplify</text>
+
+  <!-- ── ARROW MARKER DEFINITIONS ── -->
+  <defs>
+    <!-- solid filled arrow (down / right) -->
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#0530ad"/>
+    </marker>
+    <!-- solid filled arrow (up) -->
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1a6ba0"/>
+    </marker>
+    <!-- dashed return arrow -->
+    <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1a6ba0"/>
+    </marker>
+  </defs>
+
+</svg>
