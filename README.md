@@ -1,247 +1,260 @@
-# EduSimplify – AI-Powered Course Content Simplification Agent
+<div align="center">
 
-An AICTE × IBM University Engagement Student Project (2026) powered by **IBM Granite** on **IBM watsonx.ai** to simplify complex academic concepts into level-tailored, structured study modules.
+# ⚡ EduSimplify
+### AI-Powered Course Content Simplification Agent
 
----
+*AICTE × IBM University Engagement Program 2026 · Problem Statement PS19*
 
-## 1. Project Title
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-3.1-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
+[![IBM watsonx.ai](https://img.shields.io/badge/IBM-watsonx.ai-054ADA?style=for-the-badge&logo=ibm&logoColor=white)](https://www.ibm.com/watsonx)
+[![IBM Granite](https://img.shields.io/badge/IBM-Granite_4H_Small-BE95FF?style=for-the-badge&logo=ibm&logoColor=white)](https://www.ibm.com/granite)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-**EduSimplify – AI-Powered Course Content Simplification Agent**  
-*AICTE × IBM Student Engagement Program | Problem Statement PS19*
+**Simplify any academic topic into 7 structured learning sections — powered by IBM Granite on watsonx.ai**
 
----
+[🚀 Quick Start](#-quick-start) · [✨ Features](#-features) · [🏗️ Architecture](#️-architecture) · [🧪 Tests](#-tests) · [🔮 Future Scope](#-future-scope)
 
-## 2. Problem Statement
-
-### PS19 – Course Content Simplification Agent
-Academic course materials, textbooks, research papers, and faculty lecture notes often vary widely in complexity and syntactic density. Students—particularly first-generation learners and those from diverse academic backgrounds—frequently struggle to grasp foundational concepts due to jargon-heavy language, abstract formulations, and a lack of differentiated explanations.
-
-Traditional educational delivery is one-size-fits-all, failing to provide learners with adaptive explanations tailored to their existing knowledge level. There is a pressing need for an intelligent system that can analyze complex academic content and autonomously reframe explanations across multiple proficiency levels (Beginner to Expert) while maintaining rigorous factual integrity.
-
----
-
-## 3. Project Overview
-
-**EduSimplify** is a lightweight, full-stack educational AI agent built using Python, Flask, and IBM watsonx.ai. It bridges the academic comprehension gap by reframing student-submitted topics or textbook excerpts into structured, bite-sized, and pedagogically rich learning modules.
-
-The agent leverages IBM's enterprise foundation model, **`ibm/granite-4-h-small`**, to deliver multi-tier adaptive explanations. Rather than generating unstructured text, EduSimplify enforces a standardized 7-section learning framework complete with real-world analogies, concise summaries, key terms, and self-assessment quiz questions.
+</div>
 
 ---
 
-## 4. Objectives
+## 📖 About
 
-- **Democratize Education**: Make dense academic concepts accessible to learners from diverse educational and linguistic backgrounds.
-- **Adaptive Depth**: Deliver three distinct proficiency tiers (**Beginner**, **Intermediate**, and **Expert**) to match the learner's current mastery.
-- **Structured Pedagogical Framework**: Enforce an evidence-based 7-section output architecture that reinforces intuition, conceptual understanding, practical examples, and active recall.
-- **Active Self-Assessment**: Automatically produce multiple-choice quiz questions to evaluate comprehension immediately after studying.
-- **Generation Consistency**: Deterministic greedy decoding and structured prompt constraints improve consistency and reduce conversational drift.
-- **Verified Production Quality**: Maintain a clean, production-ready codebase supported by automated tests.
+**EduSimplify** is a full-stack educational AI agent that bridges the academic comprehension gap. Students submit any topic or textbook excerpt, choose their proficiency level, and receive a structured, pedagogically rich learning module — generated in real-time by **IBM Granite** (`ibm/granite-4-h-small`) on **IBM watsonx.ai**.
+
+> Traditional education is one-size-fits-all. EduSimplify adapts to *you*.
 
 ---
 
-## 5. Key Features
+## ✨ Features
 
-- **3 Differentiated Learning Levels**:
-  - **Beginner**: Simple language, intuitive analogies, everyday metaphors, and clear introductory explanations.
-  - **Intermediate**: Balanced academic tone, standard industry/scientific terminology, and applied examples.
-  - **Expert**: Rigorous technical depth, formal definitions, theoretical nuances, and advanced academic context.
-- **7 Structured Output Sections**:
-  1. **Simplified Explanation**: Core topic broken down according to selected proficiency level.
-  2. **Key Concepts**: Bulleted breakdown of essential foundational pillars.
-  3. **Real-world Analogy**: Intuitive relatable scenario that connects abstract theory to everyday life.
-  4. **Example**: Concrete scenario, numerical walk-through, or practical application.
-  5. **Important Terms**: Key terminologies clearly defined.
-  6. **Quick Revision**: High-yield bullet points for rapid review before exams.
-  7. **Quiz Questions**: 3 multiple-choice questions with answer keys.
-- **Robust Guardrails**:
-  - Input length boundaries (1–2000 characters), level validation, and multi-strategy regex fallback parsing.
+<details open>
+<summary><b>🎓 3 Adaptive Learning Levels</b></summary>
+
+| Level | Audience | Style |
+|---|---|---|
+| 🌱 **Beginner** | No prior knowledge | Simple words, friendly analogies, everyday metaphors |
+| 📘 **Intermediate** | Basic familiarity | Academic tone, standard terminology, applied examples |
+| 🎓 **Expert** | Advanced / Professional | Rigorous depth, formal definitions, theoretical nuance |
+
+</details>
+
+<details open>
+<summary><b>📚 7 Structured Output Sections</b></summary>
+
+| # | Section | Description |
+|---|---|---|
+| 1 | 💡 **Simplified Explanation** | Core concept broken down for your level |
+| 2 | 🔑 **Key Concepts** | Bulleted foundational pillars |
+| 3 | 🌍 **Real-world Analogy** | Relatable everyday scenario |
+| 4 | 📝 **Example** | Concrete walk-through or application |
+| 5 | 📖 **Important Terms** | Key terms clearly defined |
+| 6 | ⚡ **Quick Revision** | High-yield bullets for exam prep |
+| 7 | 🧠 **Quiz Questions** | 3 MCQs with answer keys |
+
+</details>
+
+<details>
+<summary><b>🛡️ Robust Guardrails</b></summary>
+
+- Input validation: 1–2000 character limit with live counter
+- Level validation on both client and server
+- Multi-strategy regex fallback parsing (numbered, plain, markdown headings)
+- Clear human-readable error messages for all failure cases
+
+</details>
 
 ---
 
-## 6. System Architecture
-
-The EduSimplify architecture follows a decoupled client-server model integrating securely with IBM Cloud services:
+## 🏗️ Architecture
 
 ![EduSimplify Architecture](docs/architecture_diagram.svg)
 
 ![EduSimplify Architecture Detailed](docs/architecture%20diagram.png)
 
-### Data Flow Pipeline:
-1. **User Interaction**: The student inputs an academic topic or textbook excerpt in the browser and selects a proficiency level (**Beginner**, **Intermediate**, or **Expert**).
-2. **Request Validation**: The Flask application receives the POST payload at `/simplify`, validating payload structure, string lengths, and level parameters.
-3. **Prompt Synthesis**: `prompts.py` builds an instruction-bounded prompt specifying level-specific persona instructions and strict 7-section contracts.
-4. **IAM Token Exchange**: `watsonx_client.py` requests a short-lived OAuth 2.0 Bearer token from `https://iam.cloud.ibm.com/identity/token` using the configured IBM Cloud API key.
-5. **Foundation Model Inference**: The prompt is submitted via HTTPS POST to the IBM watsonx.ai Text Generation endpoint (`ibm/granite-4-h-small`).
-6. **Robust Section Parsing**: `app.py` parses the generated text using multi-pattern regular expressions into structured JSON.
-7. **Client-Side Rendering**: `script.js` dynamically populates the 7 HTML cards.
-
----
-
-## 7. Technology Stack
-
-| Layer | Component | Technology | Description |
-|---|---|---|---|
-| **Backend** | Web Framework | Python 3.10+ / Flask 3.1 | Lightweight WSGI application handling routing, validation, and parsing |
-| **Frontend** | Interface | HTML5 / CSS3 / Vanilla JS | Responsive, accessible UI with level selectors |
-| **AI Foundation** | LLM | IBM Granite (`ibm/granite-4-h-small`) | Enterprise-grade instruction-tuned language model |
-| **AI Platform** | Cloud Runtime | IBM watsonx.ai | Watson Machine Learning REST inference infrastructure |
-| **Security & Auth** | Identity | IBM Cloud IAM OAuth 2.0 | Dynamic short-lived token generation without credential persistence |
-| **Configuration** | Environment | python-dotenv | Local environment variable isolation |
-| **Testing** | QA | pytest | Automated unit and integration test suite |
-
----
-
-## 8. IBM watsonx.ai and IBM Granite Usage
-
-EduSimplify connects directly to **IBM watsonx.ai** via official REST endpoints without third-party abstraction layers:
-
-- **Model Identifier**: `ibm/granite-4-h-small`
-- **Inference Endpoint**: `POST {WATSONX_URL}/ml/v1/text/generation?version=2023-05-29`
-- **Auth Endpoint**: `POST https://iam.cloud.ibm.com/identity/token`
-- **Inference Hyperparameters**:
-  - `decoding_method`: `"greedy"` — Deterministic decoding for consistent structured output.
-  - `max_new_tokens`: `2000` — Ensures sufficient output capacity for all 7 sections.
-  - `repetition_penalty`: `1.1` — Eliminates repetitive loops in bullet points and definitions.
-- **Security Posture**:
-  - API keys are read strictly from OS environment variables (`_get_required_env`).
-  - No credentials are hardcoded, logged, or returned to client browsers.
-
----
-
-## 9. Project Structure
+<details>
+<summary><b>📡 Data Flow Pipeline</b></summary>
 
 ```
-EduSimplify-Project/
-│
-├── app.py
-├── watsonx_client.py
-├── prompts.py
-├── requirements.txt
-├── README.md
-├── AGENTS.md
-├── .env.example
-├── .gitignore
-├── pytest.ini
-│
-├── templates/
-│   └── index.html
-│
-├── static/
-│   ├── style.css
-│   └── script.js
-│
-├── tests/
-│   ├── test_app.py
-│   ├── test_watsonx.py
-│   └── test_prompts.py
-│
-└── docs/
-    ├── architecture diagram.png
-    └── architecture_diagram.svg
+Browser  →  Flask /simplify  →  prompts.py  →  IBM IAM (token)
+                                                      ↓
+                                            watsonx.ai Granite
+                                                      ↓
+                               parse_sections()  ←  raw text
+                                      ↓
+                               JSON response  →  script.js  →  7 Cards
 ```
+
+1. **User Input** — Topic + level submitted via browser form
+2. **Validation** — Flask validates payload, length, and level
+3. **Prompt Build** — `prompts.py` constructs a structured 7-section prompt
+4. **IAM Auth** — `watsonx_client.py` exchanges API key for short-lived Bearer token
+5. **Inference** — Prompt sent to `ibm/granite-4-h-small` via watsonx.ai REST API
+6. **Parsing** — Multi-pattern regex splits raw text into 7 labelled sections
+7. **Render** — `script.js` populates result cards in the browser
+
+</details>
 
 ---
 
-## 10. Installation Instructions
+## 🛠️ Tech Stack
+
+| Layer | Technology | Role |
+|---|---|---|
+| **Backend** | Python 3.10+ · Flask 3.1 | Routing, validation, parsing |
+| **Frontend** | HTML5 · CSS3 · Vanilla JS | Dark-themed responsive UI |
+| **AI Model** | IBM Granite `ibm/granite-4-h-small` | Text generation |
+| **AI Platform** | IBM watsonx.ai | Model inference infrastructure |
+| **Auth** | IBM Cloud IAM OAuth 2.0 | Short-lived token exchange |
+| **Config** | python-dotenv | Environment variable isolation |
+| **Testing** | pytest | Mocked unit & integration tests |
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.10+
-- IBM Cloud Account with watsonx.ai access
+- IBM Cloud account with watsonx.ai access
 
-### 1. Clone the Repository
+### 1 — Clone
+
 ```bash
-git clone <your-repo-url>
-cd EduSimplify-Project
+git clone https://github.com/Madansingh7/EduSimplify-Project-AICTE.git
+cd EduSimplify-Project-AICTE
 ```
 
-### 2. Create and Activate Virtual Environment
-**Windows (PowerShell):**
-```powershell
+### 2 — Virtual Environment
+
+```bash
+# Windows
 python -m venv venv
 .\venv\Scripts\Activate.ps1
-```
 
-**macOS / Linux:**
-```bash
+# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### 3 — Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
----
+### 4 — Configure Credentials
 
-## 11. Environment Variable Setup
-
-Copy the template `.env.example` file to create your local `.env`:
-
-**Windows:**
-```powershell
-copy .env.example .env
-```
-
-**macOS / Linux:**
 ```bash
+# Windows
+copy .env.example .env
+
+# macOS / Linux
 cp .env.example .env
 ```
 
-Open `.env` and fill in your IBM Cloud credentials:
+Edit `.env`:
 
 ```ini
 WATSONX_API_KEY=your_ibm_cloud_api_key_here
 WATSONX_PROJECT_ID=your_watsonx_project_id_here
 WATSONX_URL=https://us-south.ml.cloud.ibm.com
 WATSONX_MODEL_ID=ibm/granite-4-h-small
-
-FLASK_DEBUG=false
-FLASK_PORT=5000
 ```
 
-> **Security Notice**: Never commit `.env` to GitHub. The `.env` file is explicitly ignored in `.gitignore`.
+> 🔒 **Never commit `.env` to GitHub** — it's already in `.gitignore`
 
----
-
-## 12. How to Run the Application
+### 5 — Run
 
 ```bash
 python app.py
 ```
 
-Navigate to: `http://127.0.0.1:5000`
+Open **[http://localhost:5000](http://localhost:5000)** 🎉
 
 ---
 
-## 13. How to Run Tests
+## 🧪 Tests
+
+All IBM HTTP calls are fully mocked — no API key needed to run tests.
 
 ```bash
+# Run all tests
 pytest tests/ -v
+
+# Run a specific file
+pytest tests/test_app.py -v
+pytest tests/test_prompts.py -v
+pytest tests/test_watsonx.py -v
 ```
 
-*Note: All external HTTP requests to IBM IAM and watsonx.ai are mocked in tests — no active internet connection or IBM API key is required.*
+---
+
+## 📁 Project Structure
+
+```
+EduSimplify-Project/
+│
+├── app.py                  ← Flask app, routes, parse_sections()
+├── watsonx_client.py       ← IBM IAM + watsonx.ai API wrapper
+├── prompts.py              ← Prompt builder + SECTION_LABELS
+├── requirements.txt
+│
+├── templates/
+│   └── index.html          ← Main UI page
+│
+├── static/
+│   ├── style.css           ← Dark theme styles
+│   └── script.js           ← Frontend logic & section renderer
+│
+├── tests/
+│   ├── test_app.py
+│   ├── test_watsonx.py
+│   └── test_prompts.py
+│
+├── docs/
+│   ├── architecture_diagram.svg
+│   └── architecture diagram.png
+│
+├── .env.example            ← Credential template
+└── .gitignore
+```
 
 ---
 
-## 14. Example Usage
+## 🔮 Future Scope
 
-1. Open `http://localhost:5000`
-2. Select a learning level: **Beginner**, **Intermediate**, or **Expert**
-3. Enter a topic (e.g. `Binary Search Trees`, `Photosynthesis`, `Quantum Superposition`)
-4. Click **✨ Simplify** — all 7 sections are generated in real-time
-
----
-
-## 15. Future Scope
-
-1. **Multilingual Support**: Translation into regional languages using IBM Granite capabilities.
-2. **Audio Read-Aloud / TTS**: Integration with speech synthesis for auditory learners.
-3. **Document Ingestion**: Upload lecture PDFs and slides for automated simplification.
-4. **LMS Integration**: Export to Moodle, Canvas, and Google Classroom.
+| # | Feature | Description |
+|---|---|---|
+| 1 | 🌐 **Multilingual Support** | Translate output into Hindi, Tamil, Bengali, Telugu |
+| 2 | 🔊 **Audio Read-Aloud** | TTS integration for auditory learners |
+| 3 | 📄 **Document Ingestion** | Upload PDFs and lecture slides |
+| 4 | 🏫 **LMS Integration** | Export to Moodle, Canvas, Google Classroom |
 
 ---
 
-## License & Acknowledgments
+## 🤝 IBM watsonx.ai Integration
 
-Developed by **Madan Singh** as part of the **AICTE × IBM University Engagement Program (2026)**.
+```
+Model    : ibm/granite-4-h-small
+Endpoint : POST {WATSONX_URL}/ml/v1/text/generation?version=2023-05-29
+Auth     : POST https://iam.cloud.ibm.com/identity/token
+
+Parameters:
+  decoding_method  : greedy   → deterministic, consistent output
+  max_new_tokens   : 2000     → fits all 7 sections comfortably
+  repetition_penalty: 1.1    → prevents looping in bullets
+```
+
+---
+
+<div align="center">
+
+**Built by [Madan Singh](https://github.com/Madansingh7)**
+
+*AICTE × IBM University Engagement Program 2026*
+
+[![IBM](https://img.shields.io/badge/Powered%20by-IBM%20Granite-054ADA?style=flat-square&logo=ibm&logoColor=white)](https://www.ibm.com/granite)
+[![watsonx](https://img.shields.io/badge/Platform-watsonx.ai-BE95FF?style=flat-square&logo=ibm&logoColor=white)](https://www.ibm.com/watsonx)
+
+</div>
