@@ -44,3 +44,8 @@ AICTE_IBM_BOB_Project_Submission_Template_for_EduentFoundation_.pptx
 *.pptx.bak
 project_presentation.pptx
 
+
+# Netlify
+node_modules/
+public/
+.netlify/
