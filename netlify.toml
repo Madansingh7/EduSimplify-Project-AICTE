@@ -1,0 +1,6 @@
+# The Flask app (app.py) is for local development only — Netlify cannot run Python servers.
+# On Netlify, the frontend in templates/ + static/ is published as static files and the
+# /simplify API runs as a Netlify Server (netlify/server/index.mjs).
+[build]
+  command = "rm -rf public && mkdir -p public/static && cp templates/index.html public/index.html && cp static/* public/static/"
+  publish = "public"
